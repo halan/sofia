@@ -25,7 +25,8 @@ Galleria.requires 1.25, "This version of Classic theme requires Galleria 1.2.5 o
       @$("image-nav-left").addClass("icon").text "<"
       @$("thumb-nav-right").addClass("icon").text ">"
       @$("thumb-nav-left").addClass("icon").text "<"
-      $(".center.button", toolbar).click ->
+
+      main_button = $(".center.button", toolbar).click ->
         super_overlay.fadeToggle()
         $(this).toggleClass "pressed"
         $albums = $("#albums", super_overlay)
@@ -33,6 +34,8 @@ Galleria.requires 1.25, "This version of Classic theme requires Galleria 1.2.5 o
           $albums.masonry
             columnWidth: 106
             isFitWidth: true
+
+
 
       @addElement "info-link", "info-close"
       @append info: [ "info-link", "info-close" ]

@@ -5,9 +5,10 @@ $ ->
   $.getJSON flickrURL + "flickr.photosets.getList&user_id=" + user_id + "&api_key=" + api_key + "&format=json&jsoncallback=?", (data) ->
     $(data.photosets.photoset).each ->
       img_src = "http://farm" + @farm + ".staticflickr.com/" + @server + "/" + @primary + "_" + @secret + "_t.jpg"
-      $("<div class='album'><h2>" + @title._content + "</h2><img src=" + img_src + "></div>").appendTo "#albums"
+      album   = $("<div class='album'><h2>" + @title._content + "</h2><img src=" + img_src + "></div>").appendTo "#albums"
+      album.click ->
+        $('.galleria-toolbar .center.button').click()
 
-  Galleria.loadTheme "/javascripts/galleria.sofia.js"
   $("#galleria").galleria
     flickr: "set:72157603286612966"
     flickrOptions:
