@@ -6,7 +6,13 @@
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
 
     <%= stylesheet_link_tag 'site.css', 'http://fonts.googleapis.com/css?family=Boogaloo'  %>
-    <%= javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js' %>
+    <%= javascript_include_tag  'http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js',
+                                'galleria-1.2.6.min.js',
+                                'galleria.flickr.js',
+                                'galleria.history.js',
+                                'jquery.masonry.min.js',
+                                'jquery.imagesloaded.js',
+                                'application.js' %>
     <%= yield_content :head %>
 
   </head>
