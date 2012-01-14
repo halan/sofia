@@ -61,22 +61,22 @@ Galleria.requires 1.25, "This version of Classic theme requires Galleria 1.2.5 o
       @attachKeyboard escape: ->
         $(".center.button", toolbar).click()
 
-      @bind "idle_enter", ->
-        if super_overlay.css("display") is "none"
-          toolbar.animate
-            bottom: -30
-          , 200
-          @$("thumbnails-container").animate
-            bottom: -100
-          , 200
+      #@bind "idle_enter", ->
+      #  if super_overlay.css("display") is "none"
+      #    toolbar.animate
+      #      bottom: -30
+      #    , 200
+      #    @$("thumbnails-container").animate
+      #      bottom: -100
+      #    , 200
 
-      @bind "idle_exit", ->
-        toolbar.animate
-          bottom: 0
-        , 200
-        @$("thumbnails-container").animate
-          bottom: 30
-        , 200
+      #@bind "idle_exit", ->
+      #  toolbar.animate
+      #    bottom: 0
+      #  , 200
+      #  @$("thumbnails-container").animate
+      #    bottom: 30
+      #  , 200
 
       @bind "thumbnail", (e) ->
         unless touch
