@@ -3,8 +3,8 @@ task :deploy do
   `mm-build`
   gitco = `git checkout gh-pages`
   unless gitco.any?
-    `git rm --ignore-unmatch *[!.gitignore]`
-    `mv build/* .`
+    `git rm -r --ignore-unmatch *[!.gitignore]`
+    `mv  build/* .`
     `git add .`
     `git commit -m "#{publish_msg}"`
     puts publish_msg
