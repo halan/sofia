@@ -15,17 +15,18 @@ Galleria.requires 1.25, "This version of Classic theme requires Galleria 1.2.5 o
       @exitFullscreen = ->
 
       @enterFullscreen()
-      @addElement "toolbar", "content-overlay"
-      @append container: [ "toolbar", "content-overlay" ]
+      @addElement "toolbar"
+      @append container: [ "toolbar"]
       toolbar = @$("toolbar")
-      super_overlay = @$("content-overlay").fadeToggle(0)
-      super_overlay.append($("#content-overlay").show()).append "<br clear=\"all\"/>"
-      toolbar.append("<a class=\"center button icon\">:</a>").append("<span class=\"album-title\">1 mês</span>").append "<div class=\"button-set right\"><a class=\"button icon\">t</a><a class=\"button icon\" >g</a><a class=\"button icon\">f</a></div>"
+      toolbar.append("<a class=\"center button icon\">:</a>")
+        #.append("<span class=\"album-title\">1 mês</span>")
+        .append "<div class=\"button-set right\"><a class=\"button icon\">t</a><a class=\"button icon\" >g</a><a class=\"button icon\">f</a></div>"
       @$("image-nav-right").addClass("icon").text ">"
       @$("image-nav-left").addClass("icon").text "<"
       @$("thumb-nav-right").addClass("icon").text ">"
       @$("thumb-nav-left").addClass("icon").text "<"
 
+      super_overlay = $('#content-overlay')
       main_button = $(".center.button", toolbar).click ->
         super_overlay.fadeToggle()
         $(this).toggleClass "pressed"
@@ -34,8 +35,6 @@ Galleria.requires 1.25, "This version of Classic theme requires Galleria 1.2.5 o
           $albums.masonry
             columnWidth: 106
             isFitWidth: true
-
-
 
       @addElement "info-link", "info-close"
       @append info: [ "info-link", "info-close" ]
@@ -90,10 +89,17 @@ Galleria.requires 1.25, "This version of Classic theme requires Galleria 1.2.5 o
           $(e.thumbTarget).css "opacity", (if @getIndex() then 1 else 0.3)
 
       @bind "loadstart", (e) ->
+        #@$('thumbnails-container').animate bottom: -100
+
         @$("loader").show().fadeTo 200, 0.4  unless e.cached
-        @$("info").toggle @hasInfo()
         $(e.thumbTarget).css("opacity", 1).parent().siblings().children().css "opacity", 0.3
 
       @bind "loadfinish", (e) ->
+        $galleria = $ '#galleria'
+        photoset  = $galleria.data 'photoset'
+        if photoset and not $galleria.data 'lock-history'
+          $galleria.removeData 'lock-history'
+          window.location.hash = "#/set/#{photoset}/#{e.index}"
+
         @$("loader").fadeOut 200
 ) jQuery
