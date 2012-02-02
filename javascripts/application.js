@@ -585,6 +585,7 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
           template: '<a class="button icon">t</a>',
           url: 'http://halan.github.com/sofia',
           enableHover: false,
+          text: 'O mundo de sofia! #mundodesofia',
           click: function(api, options) {
             api.simulateClick();
             return api.openPopup('twitter');

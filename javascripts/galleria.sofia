@@ -26,6 +26,7 @@
           template: '<a class="button icon">t</a>',
           url: 'http://halan.github.com/sofia',
           enableHover: false,
+          text: 'O mundo de sofia! #mundodesofia',
           click: function(api, options) {
             api.simulateClick();
             return api.openPopup('twitter');
