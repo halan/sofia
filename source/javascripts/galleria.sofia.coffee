@@ -17,7 +17,7 @@ Galleria.requires 1.25, "This version of Classic theme requires Galleria 1.2.5 o
       @enterFullscreen()
 
       #SOCIAL BUTTONS
-      social_buttons = $("<div class=\"button-set right\"><span class=\"twitter\"></span><span class=\"googleplus\" ></span><span class=\"facebook\"></span></div>")
+      social_buttons = $("<div class=\"button-set right\"><span class=\"twitter\"></span><span class=\"facebook\"></span></div>")
       $('.twitter', social_buttons).sharrre
         share:
           twitter: true
@@ -36,6 +36,7 @@ Galleria.requires 1.25, "This version of Classic theme requires Galleria 1.2.5 o
         click: (api, options)->
           api.simulateClick()
           api.openPopup 'facebook'
+      '''
       $('.googleplus', social_buttons).sharrre
         share:
           googlePlus: true
@@ -47,7 +48,7 @@ Galleria.requires 1.25, "This version of Classic theme requires Galleria 1.2.5 o
         click: (api, options)->
           api.simulateClick()
           api.openPopup 'googlePlus'
-
+      '''
 
 
       @addElement "toolbar"

@@ -350,12 +350,12 @@ a
       float: right
       height: 20px
       +border-radius(0)
-      &:first-child
-        +border-radius(0 5px 5px 0)
-        margin-left: -1px
-      &:last-child
-        +border-radius(5px 0 0 5px)
-        margin-right: -1px
+    .twitter .button
+      +border-radius(0 5px 5px 0)
+      margin-left: -1px
+    .facebook .button
+      +border-radius(5px 0 0 5px)
+      margin-right: -1px
   .button
     &.pressed, &:active
       padding-top: 3px
