@@ -328,7 +328,7 @@ Galleria.prototype.load = function() {
         f,
         opts = $.extend({}, self._options.flickrOptions),
         loader = typeof opts.loader !== 'undefined' ?
-            opts.loader : $('<div>').css({
+            opts.loader : $('<div class="loader">').css({
                 width: 48,
                 height: 48,
                 opacity: 0.7,
