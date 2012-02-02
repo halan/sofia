@@ -15,15 +15,54 @@
         _toggleInfo: false
       },
       init: function(options) {
-        var click, info, main_button, super_overlay, toolbar, touch;
+        var click, info, main_button, social_buttons, super_overlay, toolbar, touch;
         this.exitFullscreen = function() {};
         this.enterFullscreen();
+        social_buttons = $("<div class=\"button-set right\"><span class=\"twitter\"></span><span class=\"googleplus\" ></span><span class=\"facebook\"></span></div>");
+        $('.twitter', social_buttons).sharrre({
+          share: {
+            twitter: true
+          },
+          template: '<a class="button icon">t</a>',
+          url: 'http://halan.github.com/sofia',
+          enableHover: false,
+          click: function(api, options) {
+            api.simulateClick();
+            return api.openPopup('twitter');
+          }
+        });
+        $('.facebook', social_buttons).sharrre({
+          share: {
+            facebook: true
+          },
+          template: '<a class="button icon">f</a>',
+          url: 'http://halan.github.com/sofia',
+          enableHover: false,
+          click: function(api, options) {
+            api.simulateClick();
+            return api.openPopup('facebook');
+          }
+        });
+        $('.googleplus', social_buttons).sharrre({
+          share: {
+            googlePlus: true
+          },
+          template: '<a class="button icon">g</a>',
+          url: 'http://halan.github.com/sofia',
+          urlCurl: "",
+          enableCounter: false,
+          enableHover: false,
+          click: function(api, options) {
+            api.simulateClick();
+            return api.openPopup('googlePlus');
+          }
+        });
         this.addElement("toolbar");
         this.append({
           container: ["toolbar"]
         });
         toolbar = this.$("toolbar");
-        toolbar.append("<a class=\"center button icon\">:</a>").append("<div class=\"button-set right\"><a class=\"button icon\">t</a><a class=\"button icon\" >g</a><a class=\"button icon\">f</a></div>");
+        toolbar.append("<a class=\"center button icon\">:</a>").append(social_buttons);
         this.$("image-nav-right").addClass("icon").text(">");
         this.$("image-nav-left").addClass("icon").text("<");
         this.$("thumb-nav-right").addClass("icon").text(">");

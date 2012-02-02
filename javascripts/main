@@ -11,7 +11,7 @@
     super_overlay.append("<br clear=\"all\"/>");
     flickrURL = "http://api.flickr.com/services/rest/?method=";
     api_key = "2a2ce06c15780ebeb0b706650fc890b2";
-    user_id = "";
+    user_id = "75716207@N02";
     return $.getJSON(flickrURL + "flickr.photosets.getList&user_id=" + user_id + "&api_key=" + api_key + "&format=json&jsoncallback=?", function(data) {
       var last_photoset;
       $(data.photosets.photoset).each(function() {
@@ -20,6 +20,7 @@
         img_src = "http://farm" + this.farm + ".staticflickr.com/" + this.server + "/" + this.primary + "_" + this.secret + "_t.jpg";
         album = $("<div class='album'><h2>" + this.title._content + "</h2><img src=" + img_src + "></div>").appendTo("#albums");
         return album.click(function() {
+          $('.galleria-toolbar .center.button').removeClass('pressed');
           return super_overlay.fadeToggle(function() {
             return $.sammy().setLocation("#/set/" + _this.id + "/0");
           });
