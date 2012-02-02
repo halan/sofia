@@ -432,7 +432,7 @@ Galleria.prototype.load = function() {
         f,
         opts = $.extend({}, self._options.flickrOptions),
         loader = typeof opts.loader !== 'undefined' ?
-            opts.loader : $('<div>').css({
+            opts.loader : $('<div class="loader">').css({
                 width: 48,
                 height: 48,
                 opacity: 0.7,
@@ -577,7 +577,7 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
         var click, info, main_button, social_buttons, super_overlay, toolbar, touch;
         this.exitFullscreen = function() {};
         this.enterFullscreen();
-        social_buttons = $("<div class=\"button-set right\"><span class=\"twitter\"></span><span class=\"googleplus\" ></span><span class=\"facebook\"></span></div>");
+        social_buttons = $("<div class=\"button-set right\"><span class=\"twitter\"></span><span class=\"facebook\"></span></div>");
         $('.twitter', social_buttons).sharrre({
           share: {
             twitter: true
@@ -602,20 +602,7 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
             return api.openPopup('facebook');
           }
         });
-        $('.googleplus', social_buttons).sharrre({
-          share: {
-            googlePlus: true
-          },
-          template: '<a class="button icon">g</a>',
-          url: 'http://halan.github.com/sofia',
-          urlCurl: "",
-          enableCounter: false,
-          enableHover: false,
-          click: function(api, options) {
-            api.simulateClick();
-            return api.openPopup('googlePlus');
-          }
-        });
+        '$(\'.googleplus\', social_buttons).sharrre\n  share:\n    googlePlus: true\n  template: \'<a class="button icon">g</a>\'\n  url: \'http://halan.github.com/sofia\'\n  urlCurl: ""\n  enableCounter: false\n  enableHover: false\n  click: (api, options)->\n    api.simulateClick()\n    api.openPopup \'googlePlus\'';
         this.addElement("toolbar");
         this.append({
           container: ["toolbar"]
