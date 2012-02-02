@@ -7,7 +7,7 @@ $ ->
 
   flickrURL = "http://api.flickr.com/services/rest/?method="
   api_key = "2a2ce06c15780ebeb0b706650fc890b2"
-  user_id = ""
+  user_id = "75716207@N02"
   $.getJSON flickrURL + "flickr.photosets.getList&user_id=" + user_id + "&api_key=" + api_key + "&format=json&jsoncallback=?", (data) ->
 
     $(data.photosets.photoset).each ->
