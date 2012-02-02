@@ -15,12 +15,48 @@ Galleria.requires 1.25, "This version of Classic theme requires Galleria 1.2.5 o
       @exitFullscreen = ->
 
       @enterFullscreen()
+
+      #SOCIAL BUTTONS
+      social_buttons = $("<div class=\"button-set right\"><span class=\"twitter\"></span><span class=\"googleplus\" ></span><span class=\"facebook\"></span></div>")
+      $('.twitter', social_buttons).sharrre
+        share:
+          twitter: true
+        template: '<a class="button icon">t</a>'
+        url: 'http://halan.github.com/sofia'
+        enableHover: false
+        click: (api, options)->
+          api.simulateClick()
+          api.openPopup 'twitter'
+      $('.facebook', social_buttons).sharrre
+        share:
+          facebook: true
+        template: '<a class="button icon">f</a>'
+        url: 'http://halan.github.com/sofia'
+        enableHover: false
+        click: (api, options)->
+          api.simulateClick()
+          api.openPopup 'facebook'
+      $('.googleplus', social_buttons).sharrre
+        share:
+          googlePlus: true
+        template: '<a class="button icon">g</a>'
+        url: 'http://halan.github.com/sofia'
+        urlCurl: ""
+        enableCounter: false
+        enableHover: false
+        click: (api, options)->
+          api.simulateClick()
+          api.openPopup 'googlePlus'
+
+
+
       @addElement "toolbar"
       @append container: [ "toolbar"]
       toolbar = @$("toolbar")
       toolbar.append("<a class=\"center button icon\">:</a>")
         #.append("<span class=\"album-title\">1 mês</span>")
-        .append "<div class=\"button-set right\"><a class=\"button icon\">t</a><a class=\"button icon\" >g</a><a class=\"button icon\">f</a></div>"
+        .append social_buttons
+        
       @$("image-nav-right").addClass("icon").text ">"
       @$("image-nav-left").addClass("icon").text "<"
       @$("thumb-nav-right").addClass("icon").text ">"
