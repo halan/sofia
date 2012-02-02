@@ -14,7 +14,7 @@ $ ->
       img_src = "http://farm" + @farm + ".staticflickr.com/" + @server + "/" + @primary + "_" + @secret + "_t.jpg"
       album   = $("<div class='album'><h2>" + @title._content + "</h2><img src=" + img_src + "></div>").appendTo "#albums"
       album.click =>
-        #       $('.galleria-toolbar .center.button').click()
+        $('.galleria-toolbar .center.button').removeClass('pressed')
         super_overlay.fadeToggle =>
           $.sammy().setLocation "#/set/#{@id}/0"
         
