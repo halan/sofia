@@ -24,6 +24,7 @@ Galleria.requires 1.25, "This version of Classic theme requires Galleria 1.2.5 o
         template: '<a class="button icon">t</a>'
         url: 'http://halan.github.com/sofia'
         enableHover: false
+        text: 'O mundo de sofia! #mundodesofia'
         click: (api, options)->
           api.simulateClick()
           api.openPopup 'twitter'
