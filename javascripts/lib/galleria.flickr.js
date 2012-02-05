@@ -333,7 +333,7 @@ Galleria.prototype.load = function() {
                 width: 48,
                 height: 48,
                 opacity: 0.7,
-                background:'#000 url(/images/loader.gif) no-repeat 50% 50%'
+                background:'#000 url(images/loader.gif) no-repeat 50% 50%'
             });
 
     if ( flickr.length ) {
