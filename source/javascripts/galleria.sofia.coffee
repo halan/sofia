@@ -22,7 +22,6 @@ Galleria.requires 1.25, "This version of Classic theme requires Galleria 1.2.5 o
         share:
           twitter: true
         template: '<a class="button icon">t</a>'
-        url: 'http://halan.github.com/sofia'
         enableHover: false
         text: 'O mundo de sofia! #mundodesofia'
         click: (api, options)->
@@ -32,7 +31,6 @@ Galleria.requires 1.25, "This version of Classic theme requires Galleria 1.2.5 o
         share:
           facebook: true
         template: '<a class="button icon">f</a>'
-        url: 'http://halan.github.com/sofia'
         enableHover: false
         click: (api, options)->
           api.simulateClick()
