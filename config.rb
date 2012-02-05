@@ -74,7 +74,7 @@ configure :build do
   activate :minify_css
   
   # Minify Javascript on build
-#  activate :minify_javascript
+  activate :minify_javascript
   
   # Enable cache buster
   # activate :cache_buster
@@ -90,3 +90,19 @@ configure :build do
   # Or use a different image path
   # set :http_path, "/Content/images/"
 end
+
+module Middleman::Features::UniqJs
+  class << self
+    def registered(app)
+      app.build_reroute do |destination, request_path|
+        if request_path =~ /^\/javascripts\// and request_path != '/javascripts/application.js'
+          throw
+        end
+      end
+    end
+    alias :included :registered
+  end
+end
+
+activate :uniq_js
+

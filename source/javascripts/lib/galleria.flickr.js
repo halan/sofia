@@ -1,13 +1,3 @@
-/**
- * @preserve Galleria Flickr Plugin 2011-08-01
- * http://galleria.aino.se
- *
- * Copyright 2011, Aino
- * Licensed under the MIT license.
- */
-
-/*global jQuery, Galleria, window */
-
 Galleria.requires(1.25, 'The Flickr Plugin requires Galleria version 1.2.5 or later.');
 
 (function($) {
