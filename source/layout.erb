@@ -8,7 +8,9 @@
     <%= stylesheet_link_tag 'fonts.css', 'site.css', 'http://fonts.googleapis.com/css?family=Boogaloo'  %>
     <%= javascript_include_tag  'http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js', 'application.js' %>
     <%= yield_content :head %>
-
+    <meta property="og:title" content="O Mundo de Sofia" /> 
+    <meta property="og:description" content="Venha conferir as novas fotos no albinho digital de Sofia Lilith." /> 
+    <meta property="og:image" content="http://halan.github.com/sofia/images/sofia.jpg" /> 
   </head>
   
   <body class="<%= page_classes %>">
