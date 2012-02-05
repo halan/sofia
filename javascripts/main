@@ -26,7 +26,7 @@
           });
         });
       });
-      last_photoset = $(data.photosets.photoset).get(-1);
+      last_photoset = $(data.photosets.photoset).get(0);
       app = $.sammy(function() {
         this.bind('load-galleria', function(e, data) {
           var galleria;

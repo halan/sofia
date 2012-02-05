@@ -720,7 +720,7 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
           });
         });
       });
-      last_photoset = $(data.photosets.photoset).get(-1);
+      last_photoset = $(data.photosets.photoset).get(0);
       app = $.sammy(function() {
         this.bind('load-galleria', function(e, data) {
           var galleria;
