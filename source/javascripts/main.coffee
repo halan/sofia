@@ -18,7 +18,7 @@ $ ->
         super_overlay.fadeToggle =>
           $.sammy().setLocation "#/set/#{@id}/0"
         
-    last_photoset = $(data.photosets.photoset).get(-1)
+    last_photoset = $(data.photosets.photoset).get(0)
 
     app = $.sammy ->
 
